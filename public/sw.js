@@ -1,9 +1,9 @@
 // Service worker: permite funcionar sin conexión tras la primera carga.
 // Estrategia stale-while-revalidate para archivos del mismo origen.
-const CACHE = 'inventarium-v1'
+const CACHE = 'inventarium-v2'
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/', '/logo.svg'])).then(() => self.skipWaiting()))
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/', '/logo.png'])).then(() => self.skipWaiting()))
 })
 
 self.addEventListener('activate', (e) => {

@@ -75,7 +75,7 @@ p, li { font-size: 32px; line-height: 1.45; }
 
 /* Bienvenida */
 .welcome { align-items: center; justify-content: center; text-align: center; gap: 56px; padding: 80px; }
-.welcome .logo { width: 280px; height: 280px; border-radius: 64px; object-fit: contain; box-shadow: var(--shadow); }
+.welcome .logo { width: 420px; height: auto; border-radius: 56px; box-shadow: var(--shadow); }
 .welcome p { max-width: 800px; font-size: 38px; color: var(--text-muted); }
 
 /* Visor 3D */
@@ -162,7 +162,7 @@ th { color: var(--text-muted); font-size: 24px; text-transform: uppercase; lette
 .landscape h1 { font-size: 80px; }
 .landscape h2 { font-size: 48px; }
 .landscape .welcome { gap: 36px; padding: 40px; }
-.landscape .welcome .logo { width: 200px; height: 200px; }
+.landscape .welcome .logo { width: 300px; }
 .landscape .thanks { gap: 28px; padding: 40px; }
 .landscape .keypad button { height: 104px; }
 

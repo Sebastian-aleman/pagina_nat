@@ -21,7 +21,7 @@ Para kiosco offline: abrir **una vez** la versión `build` con conexión (o serv
 ## Ajustes
 - Colores y fondo: `src/theme.css` (variables CSS).
 - Tiempos, PIN y toques de admin: `src/data/config.json` (`idleSeconds`, `autoAdvanceSeconds`, `thanksSeconds`, `adminPin`, `adminTaps`).
-- Logo: reemplaza `public/logo.svg` (actualmente un marcador).
+- Logo: `public/logo.png`.
 
 ## Administrador (oculto)
 Toca el logo en la bienvenida 5 veces seguidas → PIN (por defecto `1234`, **cámbialo**) → resultados y exportar CSV.
