@@ -1,6 +1,8 @@
 // Service worker: permite funcionar sin conexión tras la primera carga.
-// Estrategia stale-while-revalidate para archivos del mismo origen.
-const CACHE = 'inventarium-v2'
+// - Página (HTML): primero la red, así siempre se carga la versión más nueva; sin internet, usa la copia guardada.
+// - Archivos con hash (/assets/): copia guardada primero (nunca cambian).
+// - Resto (modelos, medios): copia guardada y se actualiza en segundo plano.
+const CACHE = 'inventarium-v3'
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/', '/logo.png'])).then(() => self.skipWaiting()))
@@ -20,15 +22,21 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET' || url.origin !== location.origin) return
   if (req.headers.has('range')) return // videos: sin caché (rangos)
 
+  const isPage = req.mode === 'navigate' || url.pathname === '/'
+  const isHashed = url.pathname.startsWith('/assets/')
+
   e.respondWith(
     caches.open(CACHE).then(async (cache) => {
-      const cached = await cache.match(req, { ignoreSearch: true })
-      const network = fetch(req)
-        .then((res) => {
-          if (res.ok && res.status === 200) cache.put(req, res.clone())
+      const cached = await cache.match(isPage ? '/' : req, { ignoreSearch: true })
+      const fromNetwork = () =>
+        fetch(req).then((res) => {
+          if (res.ok && res.status === 200) cache.put(isPage ? '/' : req, res.clone())
           return res
         })
-        .catch(() => cached ?? (req.mode === 'navigate' ? cache.match('/') : Response.error()))
+
+      if (isPage) return fromNetwork().catch(() => cached ?? Response.error())
+      if (isHashed && cached) return cached
+      const network = fromNetwork().catch(() => cached ?? Response.error())
       return cached ?? network
     }),
   )
