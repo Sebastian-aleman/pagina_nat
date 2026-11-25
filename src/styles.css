@@ -199,3 +199,20 @@ th { color: var(--text-muted); font-size: 24px; text-transform: uppercase; lette
 /* Votación: criterios en 2 columnas */
 .landscape .criteria { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; align-content: center; }
 .landscape .star { width: 132px; }
+
+/* Panel de administrador */
+.admin-body { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 24px; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.kpi { padding: 28px; display: flex; flex-direction: column; gap: 6px; }
+.kpi b { font-size: 64px; letter-spacing: -0.02em; color: var(--accent); }
+.kpi span { font-size: 26px; color: var(--text-muted); font-weight: 600; }
+.crit-stat { display: flex; flex-direction: column; gap: 6px; padding-bottom: 14px; }
+.crit-head { display: flex; justify-content: space-between; font-size: 30px; }
+.bar-row { display: grid; grid-template-columns: 110px 1fr 56px; align-items: center; gap: 14px; font-size: 24px; }
+.bar-track { height: 18px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+.bar-track i { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
+.bar-val { text-align: right; font-weight: 700; }
+.admin-actions { display: flex; gap: 16px; flex-wrap: wrap; flex: none; }
+.admin-actions .btn { flex: 1; }
+.landscape .admin-body { display: grid; grid-template-columns: 1fr 1fr; align-content: start; }
+.landscape .kpis { grid-column: 1 / -1; }

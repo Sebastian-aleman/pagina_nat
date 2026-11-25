@@ -1,9 +1,14 @@
 import { LocalVoteRepository } from './LocalVoteRepository'
+import { SupabaseVoteRepository } from './SupabaseVoteRepository'
 import type { VoteRepository } from './VoteRepository'
 import type { Vote } from '../types'
 import { criterios } from '../data'
 
-export const voteRepo: VoteRepository = new LocalVoteRepository()
+const url = import.meta.env.VITE_SUPABASE_URL as string | undefined
+const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
+
+/** Con las dos variables de entorno usa la nube; sin ellas, guarda solo en este navegador. */
+export const voteRepo: VoteRepository = url && key ? new SupabaseVoteRepository(url, key) : new LocalVoteRepository()
 
 export const newVote = (projectId: string, ratings: Record<string, number>): Vote => ({
   id: crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(16).slice(2)}`,

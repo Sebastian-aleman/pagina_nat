@@ -24,6 +24,7 @@ const t = {
     pin: 'Ingresa el PIN', wrongPin: 'PIN incorrecto', cancel: 'Cancelar',
     admin: 'Resultados', votes: 'votos', average: 'Promedio', exportCsv: 'Exportar CSV', exit: 'Salir', noVotes: 'Aún no hay votos.',
     fullscreen: 'Pantalla completa',
+    storageCloud: 'Nube', storageLocal: 'Solo este equipo', pending: 'pendientes', overall: 'Promedio general', lastVote: 'Último voto', byCriterion: 'Por criterio', perHour: 'Votos por hora', recent: 'Últimos votos', when: 'Fecha', refresh: 'Actualizar', connError: 'No se pudo conectar. Revisa internet.',
   },
   en: {
     subtitle: 'Industrial design project exhibition',
@@ -48,6 +49,7 @@ const t = {
     pin: 'Enter PIN', wrongPin: 'Wrong PIN', cancel: 'Cancel',
     admin: 'Results', votes: 'votes', average: 'Average', exportCsv: 'Export CSV', exit: 'Exit', noVotes: 'No votes yet.',
     fullscreen: 'Fullscreen',
+    storageCloud: 'Cloud', storageLocal: 'This device only', pending: 'pending', overall: 'Overall average', lastVote: 'Last vote', byCriterion: 'By criterion', perHour: 'Votes per hour', recent: 'Latest votes', when: 'Date', refresh: 'Refresh', connError: 'Could not connect. Check your internet.',
   },
 }
 export const tr = (lang: Lang) => t[lang]

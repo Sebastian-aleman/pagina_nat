@@ -10,7 +10,8 @@ import { Vitrina } from './screens/Vitrina'
 import { Catalogo } from './screens/Catalogo'
 import { Detalle } from './screens/Detalle'
 import { Votacion } from './screens/Votacion'
-import { Admin, Gracias, Muestra, Pin } from './screens/Otros'
+import { Gracias, Muestra } from './screens/Otros'
+import { Admin, Pin } from './screens/Admin'
 
 const NO_NAV: Screen[] = ['welcome', 'gracias', 'pin', 'admin']
 
@@ -40,7 +41,8 @@ function Recover({ reset }: { reset: () => void }) {
 export default function App() {
   const { scale, landscape, w, h } = useStageScale()
   const [lang, setLang] = useState<Lang>('es')
-  const [screen, setScreen] = useState<Screen>('welcome')
+  // Enlace para el equipo: abrir la página con #admin va directo al PIN
+  const [screen, setScreen] = useState<Screen>(() => (location.hash === '#admin' ? 'pin' : 'welcome'))
   const [index, setIndex] = useState(0)
   const [ratings, setRatings] = useState<Record<string, number>>({})
   const [bootKey, setBootKey] = useState(0)
@@ -58,7 +60,7 @@ export default function App() {
     setScreen('welcome')
   }, [])
 
-  useIdle(cfg.idleSeconds, screen !== 'welcome', goHome)
+  useIdle(cfg.idleSeconds, screen !== 'welcome' && screen !== 'pin' && screen !== 'admin', goHome)
 
   // Entrar o salir de la votación en curso no debe dejar votos a medias
   useEffect(() => { if (screen !== 'votacion') setRatings((r) => (Object.keys(r).length ? {} : r)) }, [screen])

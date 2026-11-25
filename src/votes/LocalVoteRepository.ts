@@ -1,24 +1,31 @@
 import type { Vote } from '../types'
-import type { VoteRepository } from './VoteRepository'
+import { BadPinError, type RepoStatus, type VoteRepository } from './VoteRepository'
+import { cfg } from '../data'
 
 const KEY = 'inventarium.votes.v1'
 
+export function readLocalVotes(): Vote[] {
+  try {
+    const v = JSON.parse(localStorage.getItem(KEY) ?? '[]')
+    return Array.isArray(v) ? v : []
+  } catch {
+    return []
+  }
+}
+
+export function writeLocalVote(vote: Vote) {
+  const all = readLocalVotes()
+  if (all.some((v) => v.id === vote.id)) return // idempotente: evita duplicados
+  all.push(vote)
+  localStorage.setItem(KEY, JSON.stringify(all))
+}
+
+/** Modo sin nube: los votos quedan solo en este navegador. */
 export class LocalVoteRepository implements VoteRepository {
-  private read(): Vote[] {
-    try {
-      const v = JSON.parse(localStorage.getItem(KEY) ?? '[]')
-      return Array.isArray(v) ? v : []
-    } catch {
-      return []
-    }
+  async add(vote: Vote) { writeLocalVote(vote) }
+  async list(pin: string) {
+    if (pin !== cfg.adminPin) throw new BadPinError()
+    return readLocalVotes()
   }
-  async add(vote: Vote): Promise<void> {
-    const all = this.read()
-    if (all.some((v) => v.id === vote.id)) return // idempotente: evita duplicados
-    all.push(vote)
-    localStorage.setItem(KEY, JSON.stringify(all))
-  }
-  async list(): Promise<Vote[]> {
-    return this.read()
-  }
+  status(): RepoStatus { return { mode: 'local', pending: 0 } }
 }

@@ -23,8 +23,13 @@ Para kiosco offline: abrir **una vez** la versión `build` con conexión (o serv
 - Tiempos, PIN y toques de admin: `src/data/config.json` (`idleSeconds`, `autoAdvanceSeconds`, `thanksSeconds`, `adminPin`, `adminTaps`).
 - Logo: `public/logo.png`.
 
-## Administrador (oculto)
-Toca el logo en la bienvenida 5 veces seguidas → PIN (por defecto `1234`, **cámbialo**) → resultados y exportar CSV.
+## Panel de administrador (para el equipo)
+- Abre la página con `#admin` al final (ej. `https://tu-sitio.vercel.app/#admin`) o toca el logo 5 veces → PIN → estadísticas (total, promedio general, por criterio con distribución de estrellas, votos por hora, últimos votos) y exportar CSV.
+- Sin nube el PIN es `adminPin` de `src/data/config.json` y solo se ven los votos de ese navegador. Con la nube, el PIN lo valida la base de datos.
 
-## Votos
-`src/votes/VoteRepository.ts` es la interfaz; hoy se guarda en `localStorage` (`LocalVoteRepository`). Para Supabase: implementar la misma interfaz y cambiar la instancia en `src/votes/index.ts`.
+## Votos en la nube (Supabase)
+1. Crea un proyecto en Supabase y ejecuta `docs/supabase.sql` (cambiando el PIN dentro).
+2. En Vercel → Settings → Environment Variables: `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY` (la clave publishable/anon). Vuelve a desplegar.
+3. Los votos se envían solos; si no hay internet quedan en cola y se reenvían. El equipo solo necesita el enlace y el PIN.
+
+Sin esas variables la app guarda los votos solo en el navegador. La interfaz está en `src/votes/`.

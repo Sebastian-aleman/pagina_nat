@@ -3,6 +3,7 @@
   "autoAdvanceSeconds": 6,
   "autoAdvanceResumeSeconds": 10,
   "thanksSeconds": 6,
-  "adminPin": "1234",
+  "adminPin": "123456",
+  "adminPinLength": 6,
   "adminTaps": 5
 }
