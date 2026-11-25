@@ -45,15 +45,16 @@ export class SupabaseVoteRepository implements VoteRepository {
     if (q.length === 0) return
     this.flushing = true
     try {
-      const body = q.map((v) => ({ id: v.id, project_id: v.projectId, ratings: v.ratings, created_at: v.createdAt }))
-      const res = await fetch(`${this.url}/rest/v1/votes?on_conflict=id`, {
-        method: 'POST',
-        headers: this.headers({ Prefer: 'resolution=ignore-duplicates,return=minimal' }),
-        body: JSON.stringify(body),
-      })
-      if (res.ok) {
-        const sent = new Set(q.map((v) => v.id))
-        writeQueue(readQueue().filter((v) => !sent.has(v.id)))
+      // Un voto por petición: así un duplicado no bloquea a los demás.
+      for (const v of q) {
+        const res = await fetch(`${this.url}/rest/v1/votes`, {
+          method: 'POST',
+          headers: this.headers({ Prefer: 'return=minimal' }),
+          body: JSON.stringify({ id: v.id, project_id: v.projectId, ratings: v.ratings, created_at: v.createdAt }),
+        })
+        // 409 = ese id ya estaba guardado (reintento): cuenta como enviado
+        if (res.ok || res.status === 409) writeQueue(readQueue().filter((x) => x.id !== v.id))
+        else break // error del servidor: reintenta más tarde, sin perder el voto
       }
     } catch { /* sin conexión: queda en cola */ } finally {
       this.flushing = false
