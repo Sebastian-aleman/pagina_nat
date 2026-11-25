@@ -1,0 +1,26 @@
+/* ============================================================
+   TEMA — ajusta aquí colores y fondo al probar en el PROTO.
+   (Para pantallas holográficas suele funcionar mejor un
+   --viewer-bg negro puro: #000)
+   ============================================================ */
+:root {
+  --bg: #f4f6fb;            /* fondo general */
+  --surface: #ffffff;       /* tarjetas */
+  --surface-2: #eaeff9;     /* tarjetas secundarias / chips */
+  --text: #12182b;
+  --text-muted: #5b6579;
+  --accent: #2f6bff;        /* acento azul */
+  --accent-soft: #dce7ff;
+  --accent-contrast: #ffffff;
+  --border: #d9e0ee;
+  --star-off: #cdd5e6;
+  --star-on: #2f6bff;
+  --danger: #d93a4a;
+  --viewer-bg: #e9eef9;     /* fondo del visor 3D */
+  --stage-letterbox: #000;  /* bandas fuera de 1080x1920 */
+  --radius: 36px;
+  --radius-sm: 22px;
+  --shadow: 0 12px 40px rgba(26, 48, 110, 0.12);
+  --font: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --tap: 72px;              /* mínimo táctil (>= 64) */
+}

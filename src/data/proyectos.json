@@ -1,0 +1,397 @@
+{
+  "_ayuda": "Para completar un proyecto: edita sus campos y copia los archivos. Modelo: public/models/proyecto-XX.glb (o .gltf). Miniatura: public/media/proyecto-XX/miniatura.jpg. Galeria: lista 'media' con {tipo:'imagen'|'video', archivo:'nombre.ext', titulo:{es,en}}. autores y materiales: listas de texto (ej. autores:['Nombre']; materiales:[{es:'..',en:'..'}]). Campos vacios muestran 'Informacion proximamente'. Solo el proyecto con demostrativo:true se puede evaluar.",
+  "muestra": {
+    "titulo": {
+      "es": "",
+      "en": ""
+    },
+    "descripcion": {
+      "es": "",
+      "en": ""
+    }
+  },
+  "votacion": {
+    "criterios": [
+      {
+        "id": "innovacion",
+        "nombre": {
+          "es": "Innovación",
+          "en": "Innovation"
+        }
+      },
+      {
+        "id": "funcionalidad",
+        "nombre": {
+          "es": "Funcionalidad",
+          "en": "Functionality"
+        }
+      },
+      {
+        "id": "estetica",
+        "nombre": {
+          "es": "Estética",
+          "en": "Aesthetics"
+        }
+      },
+      {
+        "id": "sustentabilidad",
+        "nombre": {
+          "es": "Sustentabilidad",
+          "en": "Sustainability"
+        }
+      }
+    ]
+  },
+  "proyectos": [
+    {
+      "id": "01",
+      "demostrativo": true,
+      "nombre": {
+        "es": "Proyecto 01",
+        "en": "Project 01"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    },
+    {
+      "id": "02",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Proyecto 02",
+        "en": "Project 02"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    },
+    {
+      "id": "03",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Proyecto 03",
+        "en": "Project 03"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    },
+    {
+      "id": "04",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Proyecto 04",
+        "en": "Project 04"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    },
+    {
+      "id": "05",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Proyecto 05",
+        "en": "Project 05"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    },
+    {
+      "id": "06",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Proyecto 06",
+        "en": "Project 06"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    },
+    {
+      "id": "07",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Proyecto 07",
+        "en": "Project 07"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    },
+    {
+      "id": "08",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Proyecto 08",
+        "en": "Project 08"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    },
+    {
+      "id": "09",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Proyecto 09",
+        "en": "Project 09"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    },
+    {
+      "id": "10",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Proyecto 10",
+        "en": "Project 10"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": []
+    }
+  ]
+}

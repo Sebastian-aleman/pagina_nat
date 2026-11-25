@@ -1,0 +1,8 @@
+{
+  "idleSeconds": 60,
+  "autoAdvanceSeconds": 6,
+  "autoAdvanceResumeSeconds": 10,
+  "thanksSeconds": 6,
+  "adminPin": "1234",
+  "adminTaps": 5
+}
