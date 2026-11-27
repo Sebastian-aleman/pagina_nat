@@ -10,7 +10,7 @@ const N = proyectos.length
 const wrap = (i: number) => (i + N) % N
 
 export function Vitrina() {
-  const { lang, index, setIndex, openProject, landscape } = useApp()
+  const { lang, index, setIndex, openProject, landscape, go } = useApp()
   const t = tr(lang)
   const touched = useRef(false)
   const swipeX = useRef<number | null>(null)
@@ -51,7 +51,7 @@ export function Vitrina() {
           if (Math.abs(dx) > 80) goTo(index + (dx < 0 ? 1 : -1))
         }}
       >
-        <ModelViewer project={p} width={landscape ? '100%' : 968} height={landscape ? '100%' : 780} autoRotate interactive={false} onTouch={touch} />
+        <ModelViewer project={p} width={landscape ? '100%' : 968} height={landscape ? '100%' : 640} autoRotate interactive={false} onTouch={touch} />
       </div>
 
       <div className="carousel-controls">
@@ -59,6 +59,9 @@ export function Vitrina() {
         <button className="btn" onClick={() => openProject(index)}>{t.viewProject}</button>
         <button className="btn ghost" onClick={() => goTo(index + 1)}>{t.next} ›</button>
       </div>
+
+      {/* Evalúa el proyecto que se está mostrando ahora */}
+      <button className="btn big vitrina-eval" onClick={() => go('votacion')}>★ {t.evaluate}</button>
 
       <div className="thumbs">
         {proyectos.map((q, i) => (

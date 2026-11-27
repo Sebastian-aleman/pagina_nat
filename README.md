@@ -16,7 +16,7 @@ Para kiosco offline: abrir **una vez** la versión `build` con conexión (o serv
 2. Copia `public/models/proyecto-XX.glb` (o `.gltf`). Ver `docs/COMPRIMIR_GLB.md`.
 3. Copia `public/media/proyecto-XX/miniatura.jpg` y las imágenes/videos; lístalos en `media`:
    `{ "tipo": "imagen", "archivo": "foto1.jpg", "titulo": { "es": "", "en": "" } }`.
-4. El proyecto con `"demostrativo": true` es el único que se puede evaluar. Criterios en `votacion.criterios`.
+4. Todos los proyectos se pueden evaluar (botón "Evaluar" en la vitrina y en el detalle). Criterios en `votacion.criterios`.
 
 ## Ajustes
 - Colores y fondo: `src/theme.css` (variables CSS).

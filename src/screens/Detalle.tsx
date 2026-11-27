@@ -86,9 +86,7 @@ export function Detalle() {
         )}
       </div>
 
-      {p.demostrativo && (
-        <button className="btn big" onClick={() => go('votacion')}>★ {t.evaluate}</button>
-      )}
+      <button className="btn big" onClick={() => go('votacion')}>★ {t.evaluate}</button>
       </div>
       </div>
 

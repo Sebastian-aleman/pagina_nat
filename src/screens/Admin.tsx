@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useApp } from '../state'
 import { tr } from '../i18n'
-import { cfg, criterios, txt } from '../data'
+import { cfg, criterios, proyectos, txt } from '../data'
 import { toCsv, voteRepo } from '../votes'
 import { BadPinError } from '../votes/VoteRepository'
 import type { Vote } from '../types'
@@ -71,6 +71,15 @@ export function Admin() {
   const [loading, setLoading] = useState(false)
   const [err, setErr] = useState(false)
   const st = voteRepo.status()
+  const [filter, setFilter] = useState<string>('all')
+  const shown = useMemo(() => (filter === 'all' ? votes : votes.filter((v) => v.projectId === filter)), [votes, filter])
+  // Proyectos con votos (incluye ids que no estén en los datos, p. ej. pruebas)
+  const counts = useMemo(() => {
+    const m = new Map<string, number>()
+    votes.forEach((v) => m.set(v.projectId, (m.get(v.projectId) ?? 0) + 1))
+    return m
+  }, [votes])
+  const projName = (id: string) => { const p = proyectos.find((x) => x.id === id); return p ? txt(p.nombre, lang) : id }
 
   useEffect(() => { if (!session) go('pin') }, [go])
 
@@ -87,22 +96,22 @@ export function Admin() {
   const stats = useMemo(() => {
     const per = criterios.map((c) => ({
       c,
-      avg: avgOf(votes, c.id),
-      dist: [1, 2, 3, 4, 5].map((n) => votes.filter((v) => v.ratings[c.id] === n).length),
+      avg: avgOf(shown, c.id),
+      dist: [1, 2, 3, 4, 5].map((n) => shown.filter((v) => v.ratings[c.id] === n).length),
     }))
     const overall = per.length ? per.reduce((s, p) => s + p.avg, 0) / per.length : 0
     // votos por hora (últimas 12 horas con datos)
     const byHour = new Map<string, number>()
-    votes.forEach((v) => {
+    shown.forEach((v) => {
       const d = new Date(v.createdAt)
       const k = `${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, '0')}h`
       byHour.set(k, (byHour.get(k) ?? 0) + 1)
     })
     return { per, overall, hours: [...byHour.entries()].slice(-12) }
-  }, [votes])
+  }, [shown])
 
   const exportCsv = () => {
-    const url = URL.createObjectURL(new Blob([toCsv(votes)], { type: 'text/csv;charset=utf-8' }))
+    const url = URL.createObjectURL(new Blob([toCsv(shown)], { type: 'text/csv;charset=utf-8' }))
     const a = document.createElement('a')
     a.href = url
     a.download = `inventarium-votos-${new Date().toISOString().slice(0, 10)}.csv`
@@ -113,7 +122,7 @@ export function Admin() {
   }
 
   const maxHour = Math.max(1, ...stats.hours.map(([, n]) => n))
-  const recent = [...votes].reverse().slice(0, 8)
+  const recent = [...shown].reverse().slice(0, 8)
 
   return (
     <div className="screen admin">
@@ -124,14 +133,21 @@ export function Admin() {
         </span>
       </div>
 
+      <div className="filters">
+        <button className={filter === 'all' ? 'on' : ''} onClick={() => setFilter('all')}>{t.allProjects} ({votes.length})</button>
+        {[...counts.keys()].sort().map((id) => (
+          <button key={id} className={filter === id ? 'on' : ''} onClick={() => setFilter(id)}>{projName(id)} ({counts.get(id)})</button>
+        ))}
+      </div>
+
       <div className="admin-body scroll">
         <div className="kpis">
-          <div className="card kpi"><b>{votes.length}</b><span>{t.votes}</span></div>
-          <div className="card kpi"><b>{votes.length ? stats.overall.toFixed(2) : '—'}</b><span>{t.overall}</span></div>
-          <div className="card kpi"><b>{votes.length ? new Date(votes[votes.length - 1].createdAt).toLocaleTimeString(lang, { hour: '2-digit', minute: '2-digit' }) : '—'}</b><span>{t.lastVote}</span></div>
+          <div className="card kpi"><b>{shown.length}</b><span>{t.votes}</span></div>
+          <div className="card kpi"><b>{shown.length ? stats.overall.toFixed(2) : '—'}</b><span>{t.overall}</span></div>
+          <div className="card kpi"><b>{shown.length ? new Date(shown[shown.length - 1].createdAt).toLocaleTimeString(lang, { hour: '2-digit', minute: '2-digit' }) : '—'}</b><span>{t.lastVote}</span></div>
         </div>
 
-        {votes.length === 0 ? (
+        {shown.length === 0 ? (
           <div className="card tabpanel"><p className="soon">{t.noVotes}</p></div>
         ) : (
           <>
@@ -167,7 +183,7 @@ export function Admin() {
       {err && <p style={{ color: 'var(--danger)' }}>{t.connError}</p>}
       <div className="admin-actions">
         <button className="btn" disabled={loading} onClick={refresh}>{loading ? '…' : `⟳ ${t.refresh}`}</button>
-        <button className="btn" disabled={votes.length === 0} onClick={exportCsv}>{t.exportCsv}</button>
+        <button className="btn" disabled={shown.length === 0} onClick={exportCsv}>{t.exportCsv}</button>
         <button className="btn ghost" onClick={() => { session = null; goHome() }}>{t.exit}</button>
       </div>
     </div>

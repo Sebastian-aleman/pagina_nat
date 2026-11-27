@@ -20,6 +20,8 @@ export interface Proyecto {
   comoSeHizo: L
   comoFunciona: L
   media: MediaItem[]
+  /** Enlace completo de Sketchfab (o su ID). Se usa si no hay archivo .glb/.gltf local. */
+  sketchfab?: string
 }
 
 export interface Criterio { id: string; nombre: L }

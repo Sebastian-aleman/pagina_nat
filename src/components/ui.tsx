@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { sketchfabThumb, sketchfabUid } from './Sketchfab'
 import type { Proyecto } from '../types'
 import { thumbUrl } from '../data'
 import { useApp } from '../state'
@@ -42,9 +43,20 @@ export function BottomNav() {
 
 /** Miniatura como imagen (nunca un visor 3D). Si falta, muestra el número. */
 export function Thumb({ project, className = 'ph' }: { project: Proyecto; className?: string }) {
-  const [broken, setBroken] = useState(false)
-  if (broken) return <div className={className}>{project.id}</div>
-  return <img src={thumbUrl(project)} alt="" draggable={false} onError={() => setBroken(true)} />
+  // 1) miniatura local  2) miniatura de Sketchfab  3) número del proyecto
+  const [step, setStep] = useState(0)
+  const [sf, setSf] = useState<string | null>(null)
+  useEffect(() => {
+    if (step !== 1) return
+    const uid = sketchfabUid(project)
+    if (!uid) { setStep(2); return }
+    let alive = true
+    sketchfabThumb(uid).then((u) => { if (!alive) return; if (u) setSf(u); else setStep(2) })
+    return () => { alive = false }
+  }, [step, project])
+  if (step === 0) return <img src={thumbUrl(project)} alt="" draggable={false} onError={() => setStep(1)} />
+  if (step === 1 && sf) return <img src={sf} alt="" draggable={false} onError={() => setStep(2)} />
+  return <div className={className}>{project.id}</div>
 }
 
 export function LangSwitch() {

@@ -8,6 +8,7 @@ import { useApp } from '../state'
 import { tr } from '../i18n'
 import { ErrorBoundary } from './ErrorBoundary'
 import { DRACO_PATH, forgetModelLookup, resolveModel } from './models'
+import { SketchfabEmbed, sketchfabUid } from './Sketchfab'
 
 /** Centra el modelo en el origen y lo escala para que mida ~2 unidades. */
 function Model({ url }: { url: string }) {
@@ -100,6 +101,16 @@ export function ModelViewer({ project, width, height, interactive = false, autoR
       <button className="btn" onClick={() => { forgetModelLookup(project); reset(); setAttempt((a) => a + 1) }}>{t.retry}</button>
     </div>
   )
+
+  // Sin archivo local (.glb/.gltf) pero con enlace de Sketchfab: se usa el visor de Sketchfab
+  const sfUid = sketchfabUid(project)
+  if (url === null && sfUid) {
+    return (
+      <div className="viewer" style={{ width, height }} onPointerDown={onTouch}>
+        <SketchfabEmbed uid={sfUid} interactive={interactive} autoRotate={autoRotate} reloadKey={resetKey} />
+      </div>
+    )
+  }
 
   return (
     <div className="viewer" style={{ width, height }} onPointerDown={onTouch}>

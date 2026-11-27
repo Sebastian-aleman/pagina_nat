@@ -1,5 +1,5 @@
 {
-  "_ayuda": "Para completar un proyecto: edita sus campos y copia los archivos. Modelo: public/models/proyecto-XX.glb (o .gltf). Miniatura: public/media/proyecto-XX/miniatura.jpg. Galeria: lista 'media' con {tipo:'imagen'|'video', archivo:'nombre.ext', titulo:{es,en}}. autores y materiales: listas de texto (ej. autores:['Nombre']; materiales:[{es:'..',en:'..'}]). Campos vacios muestran 'Informacion proximamente'. Solo el proyecto con demostrativo:true se puede evaluar.",
+  "_ayuda": "Para completar un proyecto: edita sus campos y copia los archivos. Modelo: public/models/proyecto-XX.glb (o .gltf). Miniatura: public/media/proyecto-XX/miniatura.jpg. Galeria: lista 'media' con {tipo:'imagen'|'video', archivo:'nombre.ext', titulo:{es,en}}. autores y materiales: listas de texto (ej. autores:['Nombre']; materiales:[{es:'..',en:'..'}]). Campos vacios muestran 'Informacion proximamente'. Todos los proyectos se pueden evaluar (botón Evaluar en vitrina y detalle). Modelo en Sketchfab: campo sketchfab con el enlace COMPLETO (https://sketchfab.com/3d-models/nombre-<id>); los enlaces cortos skfb.ly no sirven para mostrarlo. Si existe un .glb local, tiene prioridad.",
   "muestra": {
     "titulo": {
       "es": "",
@@ -47,8 +47,8 @@
       "id": "01",
       "demostrativo": true,
       "nombre": {
-        "es": "Proyecto 01",
-        "en": "Project 01"
+        "es": "Desarmador",
+        "en": "Screwdriver"
       },
       "autores": [],
       "semestre": {
@@ -76,14 +76,15 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/desarmador-60413cbd6cbd423b845b063e0d9da34b"
     },
     {
       "id": "02",
       "demostrativo": false,
       "nombre": {
-        "es": "Proyecto 02",
-        "en": "Project 02"
+        "es": "Lámpara de escritorio",
+        "en": "Desk lamp"
       },
       "autores": [],
       "semestre": {
@@ -111,14 +112,15 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/lampara-de-escritorio-a5a63477cc6240cb95ec3cfe15c06f56"
     },
     {
       "id": "03",
       "demostrativo": false,
       "nombre": {
-        "es": "Proyecto 03",
-        "en": "Project 03"
+        "es": "Lámpara de piso",
+        "en": "Floor lamp"
       },
       "autores": [],
       "semestre": {
@@ -146,16 +148,19 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/lampara-piso-piezas-824e8f1ffebf437e8a394aeaaa1f3e9d"
     },
     {
       "id": "04",
       "demostrativo": false,
       "nombre": {
-        "es": "Proyecto 04",
-        "en": "Project 04"
+        "es": "Bocina JBL",
+        "en": "JBL speaker"
       },
-      "autores": [],
+      "autores": [
+        "Natalia Jiménez"
+      ],
       "semestre": {
         "es": "",
         "en": ""
@@ -181,14 +186,15 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/bocina-jbl-natalia-jimenez-11694b06a3c9466ca021d3089dc93e37"
     },
     {
       "id": "05",
       "demostrativo": false,
       "nombre": {
-        "es": "Proyecto 05",
-        "en": "Project 05"
+        "es": "Casa Jeep",
+        "en": "Casa Jeep"
       },
       "autores": [],
       "semestre": {
@@ -216,14 +222,15 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/casa-jeep-bafdfc90af0a4935a7daca0b3be15e3a"
     },
     {
       "id": "06",
       "demostrativo": false,
       "nombre": {
-        "es": "Proyecto 06",
-        "en": "Project 06"
+        "es": "Librero",
+        "en": "Bookshelf"
       },
       "autores": [],
       "semestre": {
@@ -251,14 +258,15 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/librero-escala-11-591ab3ce50c74c8db9565668b1d3c0e4"
     },
     {
       "id": "07",
       "demostrativo": false,
       "nombre": {
-        "es": "Proyecto 07",
-        "en": "Project 07"
+        "es": "Bastón con base",
+        "en": "Walking cane with base"
       },
       "autores": [],
       "semestre": {
@@ -286,14 +294,15 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/baston-con-base-2-42a17385e63c4fa59c6d37ea3fb55a93"
     },
     {
       "id": "08",
       "demostrativo": false,
       "nombre": {
-        "es": "Proyecto 08",
-        "en": "Project 08"
+        "es": "Plumón",
+        "en": "Marker"
       },
       "autores": [],
       "semestre": {
@@ -321,14 +330,15 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/plumon-cambios-91efec231a254298b8400cd17012e53b"
     },
     {
       "id": "09",
       "demostrativo": false,
       "nombre": {
-        "es": "Proyecto 09",
-        "en": "Project 09"
+        "es": "Lámpara de techo",
+        "en": "Ceiling lamp"
       },
       "autores": [],
       "semestre": {
@@ -356,14 +366,15 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/lampara-de-techo-eac78e598ea14640935bc27195dc0630"
     },
     {
       "id": "10",
       "demostrativo": false,
       "nombre": {
-        "es": "Proyecto 10",
-        "en": "Project 10"
+        "es": "Mizu",
+        "en": "Mizu"
       },
       "autores": [],
       "semestre": {
@@ -391,7 +402,8 @@
         "es": "",
         "en": ""
       },
-      "media": []
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/mizu-74a4511b765848ffaa1585eda3624b19"
     }
   ]
 }
