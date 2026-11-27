@@ -16,13 +16,10 @@ export const Icon = {
   votacion: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" /></svg>
   ),
-  muestra: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="9" /><path d="M12 11v6M12 7.5v.01" /></svg>
-  ),
 }
 
-const NAV: { id: 'vitrina' | 'catalogo' | 'votacion' | 'muestra' }[] = [
-  { id: 'vitrina' }, { id: 'catalogo' }, { id: 'votacion' }, { id: 'muestra' },
+const NAV: { id: 'vitrina' | 'catalogo' | 'votacion' }[] = [
+  { id: 'vitrina' }, { id: 'catalogo' }, { id: 'votacion' },
 ]
 
 export function BottomNav() {

@@ -27,7 +27,6 @@ export interface Proyecto {
 export interface Criterio { id: string; nombre: L }
 
 export interface Datos {
-  muestra: { titulo: L; descripcion: L }
   votacion: { criterios: Criterio[] }
   proyectos: Proyecto[]
 }
@@ -41,4 +40,4 @@ export interface Vote {
 
 export type Screen =
   | 'welcome' | 'vitrina' | 'catalogo' | 'detalle'
-  | 'votacion' | 'muestra' | 'gracias' | 'pin' | 'admin'
+  | 'votacion' | 'gracias' | 'pin' | 'admin'

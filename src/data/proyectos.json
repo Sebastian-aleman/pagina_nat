@@ -1,15 +1,5 @@
 {
-  "_ayuda": "Para completar un proyecto: edita sus campos y copia los archivos. Modelo: public/models/proyecto-XX.glb (o .gltf). Miniatura: public/media/proyecto-XX/miniatura.jpg. Galeria: lista 'media' con {tipo:'imagen'|'video', archivo:'nombre.ext', titulo:{es,en}}. autores y materiales: listas de texto (ej. autores:['Nombre']; materiales:[{es:'..',en:'..'}]). Campos vacios muestran 'Informacion proximamente'. Todos los proyectos se pueden evaluar (botón Evaluar en vitrina y detalle). Modelo en Sketchfab: campo sketchfab con el enlace COMPLETO (https://sketchfab.com/3d-models/nombre-<id>); los enlaces cortos skfb.ly no sirven para mostrarlo. Si existe un .glb local, tiene prioridad.",
-  "muestra": {
-    "titulo": {
-      "es": "",
-      "en": ""
-    },
-    "descripcion": {
-      "es": "",
-      "en": ""
-    }
-  },
+  "_ayuda": "Para completar un proyecto: edita sus campos y copia los archivos. Modelo: public/models/proyecto-XX.glb (o .gltf). Miniatura: public/media/proyecto-XX/miniatura.jpg. autores y materiales: listas de texto (ej. autores:['Nombre']; materiales:[{es:'..',en:'..'}]). Campos vacios muestran 'Informacion proximamente'. Todos los proyectos se pueden evaluar (botón Evaluar en vitrina y detalle). Modelo en Sketchfab: campo sketchfab con el enlace COMPLETO (https://sketchfab.com/3d-models/nombre-<id>); los enlaces cortos skfb.ly no sirven para mostrarlo. Si existe un .glb local, tiene prioridad.",
   "votacion": {
     "criterios": [
       {
@@ -47,8 +37,8 @@
       "id": "01",
       "demostrativo": true,
       "nombre": {
-        "es": "Desarmador",
-        "en": "Screwdriver"
+        "es": "Casa Jeep",
+        "en": "Casa Jeep"
       },
       "autores": [],
       "semestre": {
@@ -77,7 +67,7 @@
         "en": ""
       },
       "media": [],
-      "sketchfab": "https://sketchfab.com/3d-models/desarmador-60413cbd6cbd423b845b063e0d9da34b"
+      "sketchfab": "https://sketchfab.com/3d-models/casa-jeep-bafdfc90af0a4935a7daca0b3be15e3a"
     },
     {
       "id": "02",
@@ -155,46 +145,8 @@
       "id": "04",
       "demostrativo": false,
       "nombre": {
-        "es": "Bocina JBL",
-        "en": "JBL speaker"
-      },
-      "autores": [
-        "Natalia Jiménez"
-      ],
-      "semestre": {
-        "es": "",
-        "en": ""
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "proposito": {
-        "es": "",
-        "en": ""
-      },
-      "materiales": [],
-      "queEs": {
-        "es": "",
-        "en": ""
-      },
-      "comoSeHizo": {
-        "es": "",
-        "en": ""
-      },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
-      "media": [],
-      "sketchfab": "https://sketchfab.com/3d-models/bocina-jbl-natalia-jimenez-11694b06a3c9466ca021d3089dc93e37"
-    },
-    {
-      "id": "05",
-      "demostrativo": false,
-      "nombre": {
-        "es": "Casa Jeep",
-        "en": "Casa Jeep"
+        "es": "Lámpara de techo",
+        "en": "Ceiling lamp"
       },
       "autores": [],
       "semestre": {
@@ -223,7 +175,43 @@
         "en": ""
       },
       "media": [],
-      "sketchfab": "https://sketchfab.com/3d-models/casa-jeep-bafdfc90af0a4935a7daca0b3be15e3a"
+      "sketchfab": "https://sketchfab.com/3d-models/lampara-de-techo-eac78e598ea14640935bc27195dc0630"
+    },
+    {
+      "id": "05",
+      "demostrativo": false,
+      "nombre": {
+        "es": "Desarmador",
+        "en": "Screwdriver"
+      },
+      "autores": [],
+      "semestre": {
+        "es": "",
+        "en": ""
+      },
+      "descripcion": {
+        "es": "",
+        "en": ""
+      },
+      "proposito": {
+        "es": "",
+        "en": ""
+      },
+      "materiales": [],
+      "queEs": {
+        "es": "",
+        "en": ""
+      },
+      "comoSeHizo": {
+        "es": "",
+        "en": ""
+      },
+      "comoFunciona": {
+        "es": "",
+        "en": ""
+      },
+      "media": [],
+      "sketchfab": "https://sketchfab.com/3d-models/desarmador-60413cbd6cbd423b845b063e0d9da34b"
     },
     {
       "id": "06",
@@ -337,10 +325,12 @@
       "id": "09",
       "demostrativo": false,
       "nombre": {
-        "es": "Lámpara de techo",
-        "en": "Ceiling lamp"
+        "es": "Bocina JBL",
+        "en": "JBL speaker"
       },
-      "autores": [],
+      "autores": [
+        "Natalia Jiménez"
+      ],
       "semestre": {
         "es": "",
         "en": ""
@@ -367,7 +357,7 @@
         "en": ""
       },
       "media": [],
-      "sketchfab": "https://sketchfab.com/3d-models/lampara-de-techo-eac78e598ea14640935bc27195dc0630"
+      "sketchfab": "https://sketchfab.com/3d-models/bocina-jbl-natalia-jimenez-11694b06a3c9466ca021d3089dc93e37"
     },
     {
       "id": "10",

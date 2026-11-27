@@ -1,22 +1,7 @@
 import { useEffect } from 'react'
 import { useApp } from '../state'
 import { tr } from '../i18n'
-import { cfg, datos, txt } from '../data'
-
-export function Muestra() {
-  const { lang } = useApp()
-  const t = tr(lang)
-  const title = txt(datos.muestra.titulo, lang)
-  const desc = txt(datos.muestra.descripcion, lang)
-  return (
-    <div className="screen">
-      <h2>{title || t.museTitle}</h2>
-      <div className="card tabpanel scroll">
-        {desc ? <p>{desc}</p> : <p className="soon">{t.soon}</p>}
-      </div>
-    </div>
-  )
-}
+import { cfg } from '../data'
 
 export function Gracias() {
   const { lang, goHome } = useApp()

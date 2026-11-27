@@ -10,7 +10,7 @@ import { Vitrina } from './screens/Vitrina'
 import { Catalogo } from './screens/Catalogo'
 import { Detalle } from './screens/Detalle'
 import { Votacion } from './screens/Votacion'
-import { Gracias, Muestra } from './screens/Otros'
+import { Gracias } from './screens/Otros'
 import { Admin, Pin } from './screens/Admin'
 
 const NO_NAV: Screen[] = ['welcome', 'gracias', 'pin', 'admin']
@@ -22,7 +22,6 @@ function Router({ screen }: { screen: Screen }) {
     case 'catalogo': return <Catalogo />
     case 'detalle': return <Detalle />
     case 'votacion': return <Votacion />
-    case 'muestra': return <Muestra />
     case 'gracias': return <Gracias />
     case 'pin': return <Pin />
     case 'admin': return <Admin />

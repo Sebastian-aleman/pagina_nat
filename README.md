@@ -14,8 +14,7 @@ Para kiosco offline: abrir **una vez** la versión `build` con conexión (o serv
 ## Completar un proyecto (sin tocar código)
 1. Edita `src/data/proyectos.json` (textos en `es` y `en`). Los campos vacíos muestran "Información próximamente".
 2. Copia `public/models/proyecto-XX.glb` (o `.gltf`). Ver `docs/COMPRIMIR_GLB.md`.
-3. Copia `public/media/proyecto-XX/miniatura.jpg` y las imágenes/videos; lístalos en `media`:
-   `{ "tipo": "imagen", "archivo": "foto1.jpg", "titulo": { "es": "", "en": "" } }`.
+3. (Opcional) Copia `public/media/proyecto-XX/miniatura.jpg`; si no existe se usa la miniatura de Sketchfab.
 4. Todos los proyectos se pueden evaluar (botón "Evaluar" en la vitrina y en el detalle). Criterios en `votacion.criterios`.
 
 ## Ajustes
