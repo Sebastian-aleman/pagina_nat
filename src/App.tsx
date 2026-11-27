@@ -13,7 +13,7 @@ import { Votacion } from './screens/Votacion'
 import { Gracias } from './screens/Otros'
 import { Admin, Pin } from './screens/Admin'
 
-const NO_NAV: Screen[] = ['welcome', 'gracias', 'pin', 'admin']
+const NO_NAV: Screen[] = ['gracias', 'pin', 'admin']
 
 function Router({ screen }: { screen: Screen }) {
   switch (screen) {

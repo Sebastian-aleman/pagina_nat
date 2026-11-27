@@ -25,7 +25,7 @@ const NAV: { id: 'vitrina' | 'catalogo' | 'votacion' }[] = [
 export function BottomNav() {
   const { lang, screen, go } = useApp()
   const t = tr(lang)
-  const active: Screen = screen === 'detalle' ? 'vitrina' : screen
+  const active: Screen = screen === 'detalle' || screen === 'welcome' ? 'vitrina' : screen
   return (
     <nav className="bottombar">
       {NAV.map((n) => (

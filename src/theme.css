@@ -22,5 +22,7 @@
   --radius-sm: 22px;
   --shadow: 0 12px 40px rgba(26, 48, 110, 0.12);
   --font: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --welcome-blue: 47, 107, 255;    /* degradado de la bienvenida (R, G, B) */
+  --welcome-purple: 168, 108, 255;
   --tap: 72px;              /* mínimo táctil (>= 64) */
 }
