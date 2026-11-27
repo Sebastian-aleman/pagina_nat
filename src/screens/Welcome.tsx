@@ -23,7 +23,7 @@ export function Welcome() {
   return (
     <div className="screen welcome">
       <LangSwitch />
-      <img className="logo" src="/logo.png" alt="Inventarium" onClick={onLogo} draggable={false} />
+      <img className="logo" src="/logo-transparente.png" alt="Inventarium" onClick={onLogo} draggable={false} />
       <h2 className="welcome-title">{t.subtitle}</h2>
       <p>{t.welcomeText}</p>
       <button className="btn big" onClick={() => { goFullscreen(); go('vitrina') }}>{t.start}</button>

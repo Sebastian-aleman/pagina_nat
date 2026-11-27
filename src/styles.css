@@ -95,7 +95,7 @@ p, li { font-size: 32px; line-height: 1.45; }
     linear-gradient(135deg, transparent 83.9%, rgba(255,255,255,.6) 84%, rgba(255,255,255,.6) 84.1%, transparent 84.2%);
 }
 .welcome > * { position: relative; }
-.welcome .logo { width: 420px; height: auto; border-radius: 56px; box-shadow: 0 24px 60px rgba(18, 24, 43, .22); }
+.welcome .logo { width: 460px; height: auto; }
 .welcome .welcome-title { font-size: 64px; font-weight: 800; color: var(--text); max-width: 860px; line-height: 1.15; }
 .welcome p { max-width: 820px; font-size: 40px; color: var(--text-muted); }
 .welcome .btn.big { min-width: 440px; }
@@ -182,7 +182,7 @@ th { color: var(--text-muted); font-size: 24px; text-transform: uppercase; lette
 .landscape h1 { font-size: 80px; }
 .landscape h2 { font-size: 48px; }
 .landscape .welcome { gap: 36px; padding: 40px; }
-.landscape .welcome .logo { width: 300px; }
+.landscape .welcome .logo { width: auto; height: 280px; }
 .landscape .welcome .welcome-title { font-size: 52px; }
 .landscape .welcome p { font-size: 34px; }
 .landscape .thanks { gap: 28px; padding: 40px; }
