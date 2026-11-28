@@ -3,6 +3,7 @@ import { useApp } from '../state'
 import { tr } from '../i18n'
 import { mediaUrl, proyectos, txt } from '../data'
 import { ModelViewer } from '../components/ModelViewer'
+import { FullVideo } from '../components/FullVideo'
 
 type Tab = 'queEs' | 'comoSeHizo' | 'comoFunciona'
 
@@ -81,10 +82,7 @@ export function Detalle() {
       </div>
 
       {videoFull && videoSrc && (
-        <div className="video-full" onClick={() => setVideoFull(false)}>
-          <video src={videoSrc} autoPlay muted loop playsInline data-loop />
-          <button className="btn round" onClick={() => setVideoFull(false)} aria-label={t.close}>✕</button>
-        </div>
+        <FullVideo src={videoSrc} onClose={() => setVideoFull(false)} />
       )}
     </div>
   )
