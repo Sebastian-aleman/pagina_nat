@@ -1,5 +1,5 @@
 {
-  "_ayuda": "Para completar un proyecto: edita sus campos y copia los archivos. Modelo: public/models/proyecto-XX.glb (o .gltf). Miniatura: public/media/proyecto-XX/miniatura.jpg. autores y materiales: listas de texto (ej. autores:['Nombre']; materiales:[{es:'..',en:'..'}]). Campos vacios muestran 'Informacion proximamente'. Todos los proyectos se pueden evaluar (botón Evaluar en vitrina y detalle). Modelo en Sketchfab: campo sketchfab con el enlace COMPLETO (https://sketchfab.com/3d-models/nombre-<id>); los enlaces cortos skfb.ly no sirven para mostrarlo. Si existe un .glb local, tiene prioridad.",
+  "_ayuda": "Para completar un proyecto: edita sus campos y copia los archivos. Modelo: public/models/proyecto-XX.glb (o .gltf). Miniatura: public/media/proyecto-XX/miniatura.jpg. autores y materiales: listas de texto (ej. autores:['Nombre']; materiales:[{es:'..',en:'..'}]). Campos vacios muestran 'Informacion proximamente'. Todos los proyectos se pueden evaluar (botón Evaluar en vitrina y detalle). Modelo en Sketchfab: campo sketchfab con el enlace COMPLETO (https://sketchfab.com/3d-models/nombre-<id>); los enlaces cortos skfb.ly no sirven para mostrarlo. Si existe un .glb local, tiene prioridad. Profesor: texto (ej. \"Nombre Apellido\"). ¿Cómo funciona?: video en videoFunciona = nombre del archivo copiado en public/media/proyecto-XX/ (mp4 recomendado, H.264, < 30 MB) o URL directa a un .mp4.",
   "votacion": {
     "criterios": [
       {
@@ -40,32 +40,58 @@
         "es": "Casa Jeep",
         "en": "Casa Jeep"
       },
-      "autores": [],
+      "autores": [
+        "Natalia Jiménez",
+        "Montserrat Rios"
+      ],
       "semestre": {
-        "es": "",
-        "en": ""
+        "es": "4°",
+        "en": "4th"
       },
+      "profesor": "Wesley Mendez",
       "descripcion": {
-        "es": "",
-        "en": ""
+        "es": "Casa colgante de lámina metálica pintada de verde, con bordes negros que simulan caucho y una correa con ganchos para colgarla. Incluye un plato de madera barnizada con orificios para la comida. Su forma y sus colores se inspiran en el primer Jeep de la historia y en la naturaleza.",
+        "en": "A hanging house made of green-painted metal sheet, with black edges that mimic rubber and a strap with hooks for hanging. It includes a varnished wooden tray with holes for food. Its shape and colors are inspired by the first Jeep in history and by nature."
       },
       "proposito": {
-        "es": "",
-        "en": ""
+        "es": "Llevar los valores de Jeep, durabilidad y rudeza, a un refugio para aves: un objeto resistente al clima y al paso del tiempo, honesto en sus materiales, que une la ingeniería humana con el refugio natural.",
+        "en": "To bring Jeep’s values, durability and ruggedness, to a bird shelter: an object that withstands weather and time, honest in its materials, joining human engineering with natural refuge."
       },
-      "materiales": [],
+      "materiales": [
+        {
+          "es": "Lámina metálica",
+          "en": "Metal sheet"
+        },
+        {
+          "es": "PLA (impresión 3D)",
+          "en": "PLA (3D printing)"
+        },
+        {
+          "es": "TPU (impresión 3D)",
+          "en": "TPU (3D printing)"
+        },
+        {
+          "es": "Correa",
+          "en": "Strap"
+        },
+        {
+          "es": "Madera barnizada",
+          "en": "Varnished wood"
+        },
+        {
+          "es": "Pintura en aerosol",
+          "en": "Spray paint"
+        }
+      ],
       "queEs": {
-        "es": "",
-        "en": ""
+        "es": "Una casa para pájaros inspirada en Jeep, pensada para el benteveo (Pitangus sulphuratus), un ave que se adaptó a la ciudad de Monterrey sin perder su esencia salvaje, igual que Jeep pasó del campo de batalla a la vida diaria.",
+        "en": "A birdhouse inspired by Jeep, designed for the great kiskadee (Pitangus sulphuratus), a bird that adapted to the city of Monterrey without losing its wild nature, just as Jeep went from the battlefield to everyday life."
       },
       "comoSeHizo": {
-        "es": "",
-        "en": ""
+        "es": "1. Investigación: análisis de casas para pájaros del mercado y de la marca Jeep (FODA, BCG y STEEP).\n2. Concepto: se eligieron los valores durabilidad y rudeza, y el benteveo como ave de referencia.\n3. Bocetos y renders en Vizcom para seleccionar el diseño que mejor reflejaba esos valores.\n4. Modelado 3D en Fusion 360 para definir medidas y ángulos.\n5. La lámina se cortó y se dobló siguiendo el plano, con ayuda de dos tubos de distinto diámetro.\n6. Los ganchos se imprimieron en PLA con acabado metálico y se cosieron a la correa; los bordes se imprimieron en TPU para simular caucho.\n7. Acabados: la lámina se lijó y se pintó de verde, y el TPU de negro.\n8. El plato de madera se cortó, se perforó, se lijó y se barnizó.",
+        "en": "1. Research: analysis of birdhouses on the market and of the Jeep brand (SWOT, BCG and STEEP).\n2. Concept: durability and ruggedness were chosen as values, and the great kiskadee as the reference bird.\n3. Sketches and renders in Vizcom to choose the design that best reflected those values.\n4. 3D modeling in Fusion 360 to define measurements and angles.\n5. The metal sheet was cut and bent following the plan, using two tubes of different diameters.\n6. The hooks were 3D printed in PLA with a metallic finish and sewn to the strap; the edges were printed in TPU to mimic rubber.\n7. Finishes: the sheet was sanded and painted green, and the TPU black.\n8. The wooden tray was cut, drilled, sanded and varnished."
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "benteveo_sin_repeticion.mp4",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/casa-jeep-bafdfc90af0a4935a7daca0b3be15e3a"
     },
@@ -81,6 +107,7 @@
         "es": "",
         "en": ""
       },
+      "profesor": "",
       "descripcion": {
         "es": "",
         "en": ""
@@ -98,10 +125,7 @@
         "es": "",
         "en": ""
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/lampara-de-escritorio-a5a63477cc6240cb95ec3cfe15c06f56"
     },
@@ -117,6 +141,7 @@
         "es": "",
         "en": ""
       },
+      "profesor": "",
       "descripcion": {
         "es": "",
         "en": ""
@@ -134,10 +159,7 @@
         "es": "",
         "en": ""
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/lampara-piso-piezas-824e8f1ffebf437e8a394aeaaa1f3e9d"
     },
@@ -153,6 +175,7 @@
         "es": "",
         "en": ""
       },
+      "profesor": "",
       "descripcion": {
         "es": "",
         "en": ""
@@ -170,10 +193,7 @@
         "es": "",
         "en": ""
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/lampara-de-techo-eac78e598ea14640935bc27195dc0630"
     },
@@ -189,6 +209,7 @@
         "es": "",
         "en": ""
       },
+      "profesor": "",
       "descripcion": {
         "es": "",
         "en": ""
@@ -206,10 +227,7 @@
         "es": "",
         "en": ""
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/desarmador-60413cbd6cbd423b845b063e0d9da34b"
     },
@@ -225,6 +243,7 @@
         "es": "",
         "en": ""
       },
+      "profesor": "",
       "descripcion": {
         "es": "",
         "en": ""
@@ -242,10 +261,7 @@
         "es": "",
         "en": ""
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/librero-escala-11-591ab3ce50c74c8db9565668b1d3c0e4"
     },
@@ -261,6 +277,7 @@
         "es": "",
         "en": ""
       },
+      "profesor": "",
       "descripcion": {
         "es": "",
         "en": ""
@@ -278,10 +295,7 @@
         "es": "",
         "en": ""
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/baston-con-base-2-42a17385e63c4fa59c6d37ea3fb55a93"
     },
@@ -297,6 +311,7 @@
         "es": "",
         "en": ""
       },
+      "profesor": "",
       "descripcion": {
         "es": "",
         "en": ""
@@ -314,10 +329,7 @@
         "es": "",
         "en": ""
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/plumon-cambios-91efec231a254298b8400cd17012e53b"
     },
@@ -335,6 +347,7 @@
         "es": "",
         "en": ""
       },
+      "profesor": "",
       "descripcion": {
         "es": "",
         "en": ""
@@ -352,10 +365,7 @@
         "es": "",
         "en": ""
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/bocina-jbl-natalia-jimenez-11694b06a3c9466ca021d3089dc93e37"
     },
@@ -371,6 +381,7 @@
         "es": "",
         "en": ""
       },
+      "profesor": "",
       "descripcion": {
         "es": "",
         "en": ""
@@ -388,10 +399,7 @@
         "es": "",
         "en": ""
       },
-      "comoFunciona": {
-        "es": "",
-        "en": ""
-      },
+      "videoFunciona": "",
       "media": [],
       "sketchfab": "https://sketchfab.com/3d-models/mizu-74a4511b765848ffaa1585eda3624b19"
     }

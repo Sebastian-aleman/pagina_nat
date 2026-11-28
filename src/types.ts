@@ -13,12 +13,14 @@ export interface Proyecto {
   nombre: L
   autores: string[]
   semestre: L
+  profesor?: string
   descripcion: L
   proposito: L
   materiales: L[]
   queEs: L
   comoSeHizo: L
-  comoFunciona: L
+  /** Video de "¿Cómo funciona?": archivo en public/media/proyecto-XX/ o URL directa a un .mp4/.webm */
+  videoFunciona?: string
   media: MediaItem[]
   /** Enlace completo de Sketchfab (o su ID). Se usa si no hay archivo .glb/.gltf local. */
   sketchfab?: string

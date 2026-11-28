@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react'
 import { useApp } from '../state'
 import { tr } from '../i18n'
-import { proyectos, txt } from '../data'
+import { mediaUrl, proyectos, txt } from '../data'
 import { ModelViewer } from '../components/ModelViewer'
 
 type Tab = 'queEs' | 'comoSeHizo' | 'comoFunciona'
@@ -22,8 +22,11 @@ export function Detalle() {
   const p = proyectos[index]
   const [tab, setTab] = useState<Tab>('queEs')
   const [resetKey, setResetKey] = useState(0)
+  const [videoFull, setVideoFull] = useState(false)
 
-  const tabText = txt(p[tab], lang)
+  const tabText = tab === 'comoFunciona' ? '' : txt(p[tab], lang)
+  const video = (p.videoFunciona ?? '').trim()
+  const videoSrc = video && (/^https?:\/\//.test(video) ? video : mediaUrl(p, video))
 
   return (
     <div className="screen detalle" style={{ position: 'relative' }}>
@@ -43,7 +46,7 @@ export function Detalle() {
       <div className="detail-info">
       <div className="tabs">
         {(['queEs', 'comoSeHizo', 'comoFunciona'] as Tab[]).map((k) => (
-          <button key={k} className={tab === k ? 'on' : ''} onClick={() => setTab(k)}>{t.tabs[k]}</button>
+          <button key={k} className={tab === k ? 'on' : ''} onClick={() => { setTab(k); if (k === 'comoFunciona' && videoSrc) setVideoFull(true) }}>{t.tabs[k]}</button>
         ))}
       </div>
 
@@ -54,6 +57,7 @@ export function Detalle() {
               <div className="chips">{p.autores.map((a) => <span className="chip" key={a}>{a}</span>)}</div>
             </Field>
             <Field title={t.semester} empty={!txt(p.semestre, lang)}><p>{txt(p.semestre, lang)}</p></Field>
+            <Field title={t.professor} empty={!(p.profesor ?? '').trim()}><p>{p.profesor}</p></Field>
             <Field title={t.tabs.queEs} empty={!tabText}><p>{tabText}</p></Field>
             <Field title={t.description} empty={!txt(p.descripcion, lang)}><p>{txt(p.descripcion, lang)}</p></Field>
             <Field title={t.purpose} empty={!txt(p.proposito, lang)}><p>{txt(p.proposito, lang)}</p></Field>
@@ -61,6 +65,12 @@ export function Detalle() {
               <div className="chips">{p.materiales.map((m, i) => <span className="chip" key={i}>{txt(m, lang)}</span>)}</div>
             </Field>
           </>
+        ) : tab === 'comoFunciona' ? (
+          // Video en lugar de texto (no se interrumpe por inactividad mientras se reproduce)
+          <Field title={t.tabs.comoFunciona} empty={!videoSrc}>
+            {/* Vista previa en bucle: al tocarla vuelve a pantalla completa */}
+            <video key={videoSrc} className="tab-video" src={videoSrc} autoPlay muted loop playsInline data-loop onClick={() => setVideoFull(true)} />
+          </Field>
         ) : (
           <Field title={t.tabs[tab]} empty={!tabText}><p>{tabText}</p></Field>
         )}
@@ -70,6 +80,12 @@ export function Detalle() {
       </div>
       </div>
 
+      {videoFull && videoSrc && (
+        <div className="video-full" onClick={() => setVideoFull(false)}>
+          <video src={videoSrc} autoPlay muted loop playsInline data-loop />
+          <button className="btn round" onClick={() => setVideoFull(false)} aria-label={t.close}>✕</button>
+        </div>
+      )}
     </div>
   )
 }

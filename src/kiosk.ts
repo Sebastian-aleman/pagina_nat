@@ -24,7 +24,8 @@ export function useStageScale() {
 
 /** Hay algún video reproduciéndose (no se debe interrumpir). */
 const videoPlaying = () =>
-  Array.from(document.querySelectorAll('video')).some((v) => !v.paused && !v.ended)
+  // Los videos en bucle (data-loop) no cuentan: si no, la pantalla nunca volvería al inicio
+  Array.from(document.querySelectorAll<HTMLVideoElement>('video:not([data-loop])')).some((v) => !v.paused && !v.ended)
 
 /**
  * Llama a onIdle tras `seconds` sin actividad. Si hay un video en
